@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        alfabet = new Array("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z")
+        console.log(alfabet)
+        var alfabetScore = new Array(1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10)
+
+        document.write("<h1>Scrabble punten berekenaar</h1>")
+        woord = prompt("Voor welk woord wil je de score berekenen?", "JavaScript");
+        if (woord == null) {
+            document.write("U heeft geanuleerd.");
+        } else if (woord.length == 0) {
+            document.write("U heeft geen gegevens ingevuld.");
+        } else if (woord.includes(" ") == true) {
+            document.write("Dit lijkt geen correct woord te zijn!" + "<br>U heeft ergens in het woord een spatie ingegeven.");
+        } else {
+
+            console.log(alfabet)
+            document.write("Het woord is: " + woord);
+
+            function nummer(input, input2) {
+                for (i = 0; i < woord.length; i++)
+                    document.write("<br>" + woord.charAt(i).toUpperCase() + " - " + input2[i]);
+                totaal = 24;
+
+                document.write("<br>Totaal = " + totaal);
+            }
+            nummer(alfabet, alfabetScore)
+
+        }
+    </script>
+</body>
+
+</html>
