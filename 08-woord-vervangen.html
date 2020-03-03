@@ -8,25 +8,33 @@
 </head>
 
 <body>
-    <h1>Vervang het woord</h1>
-    <p>Zin: </p>
-    <form action=""></form>
-    <input type="text" size="100">
-    <h4>Zoek dit woord: </h4> <input type="text" size="30" name="zoek">
-    <h4>Dit woord komt in de plaats: </h4> <input type="text" size="30" name="vervang">
-    <button onclick="vervangWoord(doc,document.zoek.value, document.vervang.value)"> Vervang </button>
-    <h4>De nieuwe zin: </h4>
-    <input type="text" size="100">
-    <script>
-        var doc = "Dit document is een lang document maar ook een simpel document";
+    <form name="form">
+        <h1>Vervang het woord</h1>
+        <p>Zin: </p>
+        <input type="text" value="Dit is een zin met daarin woorden." size="70" />
+        <h4>Zoek dit woord: </h4>
+        <input type="text" name="zoek" size="30" />
+        <h4>Dit woord komt in de plaats: </h4>
+        <input type="text" name="vervang" />
+        <input onclick="vervangen(doc,document.form.zoek.value, document.form.vervang.value);" type="button" name="button" value="vervang" />
+        <h4>De nieuwe zin: </h4>
+        <input type="text" size="70">
+    </form>
 
-        function vervangWoord(doc, woord, nieuwewoord) {
+
+    <script type="text/javascript">
+        var doc = "Dit is een zin met daarin woorden.";
+
+        function vervangen(doc, woord, nieuwewoord) {
             if (doc.indexOf(woord) != -1) {
                 deel1 = doc.substr(0, doc.indexOf(woord)) + nieuwewoord;
                 deel2 = doc.substring(doc.indexOf(woord) + woord.length, doc.length);
                 doc = deel1 + deel2;
+            } else {
+                document.write("Dit woord is niet gevonden.");
+
             }
-            document.write(doc);
+
         }
     </script>
 </body>
