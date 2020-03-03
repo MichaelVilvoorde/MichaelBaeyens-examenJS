@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var vandaag = new Date();
+        var dag = vandaag.getDay();
+        console.log(vandaag.getDay());
+        var dagen = new Array("zondag", "maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag");
+        document.write("Vandaag is het: " + dagen[vandaag.getDay()]);
+        if (vandaag.getDay() > 0 && vandaag.getDay() <= 5) {
+            document.write("<br>Het is een werkdag, aan de slag dus.");
+        } else {
+            document.write("<br>Het is weekend, even bekomen.");
+        }
+    </script>
+</body>
+
+</html>
